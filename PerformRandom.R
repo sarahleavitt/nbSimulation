@@ -18,7 +18,12 @@
 
 #### Outputs ####
 
-#One data frame with the predicted probabilities for each pair
+#One data frame with the predicted probabilities for each pair with:
+  #label = denotes that this is "Random" probabilities 
+  #pAvg = the random probability (called pAvg to match with the nbProbabilities function)
+  #pScaled = the probability scaled to add to one for all possible infectors for
+    #each infectee
+  #pRank = the rank of the probability of that infector for the infectee.
 
 
 ########### Interval Method ##########
