@@ -94,7 +94,7 @@ simCovariates <- function(indData, pairData, observationDate = "infectionDate"){
     other <- X2info$value[!X2info$value %in% X2val]
     #Summing the base frequenies for these options
     otherSum <- sum(X2info %>% filter(value %in% other) %>% select(freq))
-    #Setting the new frequency to 0.6 for the infector's value and distributing the remaining 0.4
+    #Setting the new frequency to 0.7 for the infector's value and distributing the remaining 0.3
     #between the other options in proportion with their base frequencies
     X2info <- X2info %>% mutate(freqNew = ifelse(value == X2val, 0.7, (0.3 * freq) / otherSum))
     indData[indData$individualID == infectee, "X2"] <- sample(X2info$value, size = 1, prob = X2info$freqNew)
@@ -119,8 +119,8 @@ simCovariates <- function(indData, pairData, observationDate = "infectionDate"){
     #Finding the sum of the frequencies of the other values
     otherSum <- sum(X4info %>% filter(value %in% other) %>% select(freq))
     
-    #Setting new frequencies to be 60% for the same value, 35% split between neighbors at their
-    #frequencies, and 5% split between other values at their frequencies
+    #Setting new frequencies to be 0.6 for the same value, 0.35 split between neighbors at their
+    #frequencies, and 0.05 split between other values at their frequencies
     X4info <- X4info %>% mutate(freqNew = ifelse(value == X4val, 0.6,
                                                  ifelse(value %in% neighbors, (0.35 * freq) / neighborSum,
                                                         (0.05 * freq) / otherSum)))
