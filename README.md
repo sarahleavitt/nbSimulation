@@ -1,8 +1,8 @@
 # nbSimulation
 
 This directory contains a set of programs used to simulate outbreak data.
-These programs are used by other programs in the npPaper1 and nbPaper2 directories
-which create the outputs for the papers developing the naive Bayes transmission
+These programs are used by other programs in the npPaper1, nbPaper2, and nbPaper3
+directories which create the outputs for the papers developing the naive Bayes transmission
 method.
 
 
